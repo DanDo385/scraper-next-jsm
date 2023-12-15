@@ -6,10 +6,11 @@ const navIcons = [
   { src: '/assets/icons/black-heart.svg', alt: 'heart' },
   { src: '/assets/icons/user.svg', alt: 'user' },
 ]
+
 const Navbar = () => {
   return (
     <header className="w-full">
-        <nav className='nav'>
+      <nav className="nav">
         <Link href="/" className="flex items-center gap-1">
           <Image 
             src="/assets/icons/logo.svg"
@@ -22,7 +23,8 @@ const Navbar = () => {
             Price<span className='text-primary'>Wise</span>
           </p>
         </Link>
-        </nav>  <div className="flex items-center gap-5">
+
+        <div className="flex items-center gap-5">
           {navIcons.map((icon) => (
             <Image 
               key={icon.alt}
@@ -36,9 +38,7 @@ const Navbar = () => {
         </div>
       </nav>
     </header>
-  
-  
-    )
+  )
 }
 
 export default Navbar
