@@ -19,6 +19,11 @@ const Searchbar = () => {
         className="flex flex-wrap gap-4 mt-12"
         onSubmit={handleSubmit}
     >
+        <input
+            type='text'
+            placeholder='Enter Product Link'
+            className = "searchbar-input"
+        />
 
     </form>
   )
