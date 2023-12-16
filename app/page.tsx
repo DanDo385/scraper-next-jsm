@@ -9,9 +9,9 @@ const Home = async () => {
 
   return (
     <>
-      <section className= "px-6 md:px-20 py-24">
-        <div className= "flex max-xk:flew-col gap-16">
-          <div className= "flex flex-col justify-center">
+      <section className="px-6 md:px-20 py-24">
+        <div className="flex max-xl:flew-col gap-16">
+          <div className="flex flex-col justify-center">
             <p className= "small-text">
               Let's get scraping!
               <Image 
@@ -23,7 +23,9 @@ const Home = async () => {
             </p>
             
             <h1 className= "head-text">
-              Unleash the power of web scraping with Next.js, Cheerio, Puppeteer, and BrightData!
+              Unleash the Power of Web Scraping with
+              <span className="text-primary"></span>
+               Next.js, Cheerio, Puppeteer, and BrightData!
             </h1>
 
             <p className= "mt-6">
@@ -37,6 +39,18 @@ const Home = async () => {
           <HeroCarousel />
         </div>
       </section>
+
+      <section className= "trending-section">
+        <h2 className= "section-text">Trending</h2>
+
+        <div className="flex flex-wrap gap-x-8 gap-y-16">
+          {allProducts?.map((product) => (
+            <ProductCard key={product._id} product={product} />
+          ))}
+        </div>
+      </section>
     </>
   )
 }
+
+export default Home;

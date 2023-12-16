@@ -10,7 +10,7 @@ const navIcons = [
 const Navbar = () => {
   return (
     <header className="w-full">
-      <nav className="nav">
+      <nav className= "nav">
         <Link href="/" className="flex items-center gap-1">
           <Image 
             src="/assets/icons/logo.svg"
@@ -41,4 +41,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;
