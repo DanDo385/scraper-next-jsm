@@ -26,7 +26,13 @@ const Searchbar = () => {
   const [searchPrompt, setSearchPrompt] = useState('');
   const [isLoading, setIsloading] = useState('');  
   
-  const handleSubmit = () ={}
+  const handleSubmit = async (event: FormEvent<HTMLFormElements>) => {
+    event.preventDefault();
+    const isValidLink = isValidProductURL(searchPrompt);  
+    if (!isValidLink) 
+      return ;
+    }
+  }
   return (
     <form 
         className="flex flex-wrap gap-4 mt-12"
