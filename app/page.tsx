@@ -1,8 +1,7 @@
 import HeroCarousel from '@/components/HeroCarousel';
 import Searchbar from '@/components/Searchbar';
 import Image from 'next/image';
-import { getAllProducts } from '@/lib/actions';
-import ProductCard from '@/components/ProductCard';
+
 
 const Home = async () => {
   const allProducts = await getAllProducts();
@@ -29,9 +28,9 @@ const Home = async () => {
             </h1>
 
             <p className="mt-6">
-              First run at a fully automated limited release item bot monitoring the sites of 
-              the user's choosing, searching for the item by its products code, entering the size, 
-              and then automating checkout...
+              First run at a fully automated limited release item bot monitoring sites of 
+              the user's choosing, searching for specified items by product code, size input, 
+              and automating checkout...
             </p>
 
             <Searchbar />
@@ -54,3 +53,27 @@ const Home = async () => {
 }
 
 export default Home;
+const Searchbar = () => {
+    const handleSubmit = () => { };
+
+    const isValidProductURL = (url: string) => {
+        try {
+            const parsedURL = new URL(url);
+            const hostname = parsedURL.hostname;
+            if (hostname.includes(''))
+                return (
+                    <form className="flex flex-wrap gap-4 mt-12" onSubmit={handleSubmit}>
+                        <input
+                            type='text'
+                            placeholder='Enter Product Link'
+                            className="searchbar-input" />
+                    </form>
+                );
+        }
+
+        finally {
+        }
+
+        export default Searchbar;
+    };
+};
