@@ -19,11 +19,14 @@ const isValidProductURL = (url : string) => {
   } catch {
     return false;
   }
+  return false;
 }
 
-
 const Searchbar = () => {
-    const handleSubmit = () ={}
+  const [searchPrompt, setSearchPrompt] = useState('');
+  const [isLoading, setIsloading] = useState('');  
+  
+  const handleSubmit = () ={}
   return (
     <form 
         className="flex flex-wrap gap-4 mt-12"
