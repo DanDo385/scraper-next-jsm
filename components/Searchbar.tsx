@@ -1,6 +1,10 @@
 "use client"
 
+//Import core libraries
 import { FormEvent, useState } from 'react';
+//Import web scraper
+import { scrapeAndStoreProduct } from '@/lib/actions';
+
 
 const Searchbar = () => {
     const handleSubmit = () ={}

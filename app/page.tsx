@@ -1,6 +1,11 @@
+//Import scraper
+import { getAllProducts } from "@/lib/actions"
+//Import image
+import Image from 'next/image';
+//Image components
 import HeroCarousel from '@/components/HeroCarousel';
 import Searchbar from '@/components/Searchbar';
-import Image from 'next/image';
+import ProductCard from "@/components/ProductCard"
 
 
 const Home = async () => {
