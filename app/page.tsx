@@ -1,11 +1,11 @@
 //Import scraper
-import { getAllProducts } from "@/lib/actions"
+import { getAllProducts } from "@/lib/actions";
 //Import image
 import Image from 'next/image';
-//Image components
+//Import components
 import HeroCarousel from '@/components/HeroCarousel';
 import Searchbar from '@/components/Searchbar';
-import ProductCard from "@/components/ProductCard"
+import ProductCard from "@/components/ProductCard";
 
 
 const Home = async () => {
@@ -58,6 +58,7 @@ const Home = async () => {
 }
 
 export default Home;
+
 const Searchbar = () => {
     const handleSubmit = () => { };
 

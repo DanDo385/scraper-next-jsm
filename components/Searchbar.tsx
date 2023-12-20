@@ -28,7 +28,7 @@ const Searchbar = () => {
   
   const handleSubmit = async (event: FormEvent<HTMLFormElements>) => {
     event.preventDefault();
-    const isValidLink = isValidAmazonProductURL(searchPrompt);
+    const isValidLink = isValidProductURL(searchPrompt);
 
     if(!isValidLink) return alert('Please provide a valid Amazon link')
 
@@ -54,12 +54,12 @@ const Searchbar = () => {
         value={searchPrompt}
         onChange={(e) => setSearchPrompt(e.target.value)}
         placeholder="Enter product link"
-        className="searchbar-input"
+        className = "searchbar-input"
       />
 
       <button 
         type="submit" 
-        className="searchbar-btn"
+        className = "searchbar-btn"
         disabled={searchPrompt === ''}
       >
         {isLoading ? 'Searching...' : 'Search'}
