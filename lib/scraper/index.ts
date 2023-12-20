@@ -1,5 +1,4 @@
-
 export async function scrapeAmazonProduct (productUrl: string) {
-    if(!urL) return;
+    if(!url) return;
 
-    
+    //Bright Data Proxy Infogacp
