@@ -30,7 +30,8 @@ const Searchbar = () => {
     event.preventDefault();
     const isValidLink = isValidProductURL(searchPrompt);
 
-    if(!isValidLink) return alert('Please provide a valid Amazon link')
+    if(!isValidLink) 
+      return alert('Please provide a valid Amazon link')
 
     try {
       setIsLoading(true);
@@ -60,7 +61,7 @@ const Searchbar = () => {
       <button 
         type="submit" 
         className = "searchbar-btn"
-        disabled={searchPrompt === ''}
+        disabled={searchPrompt === ""}
       >
         {isLoading ? 'Searching...' : 'Search'}
       </button>
