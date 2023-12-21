@@ -1,8 +1,8 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 
-export async function scrapeAmazonProduct (productUrl: string) {
-    if(!urL) return;
+export async function scrapeAmazonProduct(url: string) {
+    if(!url) return;
 
     //Bright Data Proxy Infogacp
     const username = String(process.env.BRIGHT_DATA_USERNAME);
@@ -21,8 +21,13 @@ export async function scrapeAmazonProduct (productUrl: string) {
 
     try {
       //Fetch the product page
-      const response = await axios.get(urL, options)   
-      
+      const response = await axios.get(url, options);
+      const $ = cheerio.load(response.data);
+
+      //Extract the product title
+      const title = $('#productTitle').text().trim();
+      const 
+
     } catch (error:any) {
        throw new Error(`Failed to scrape product: ${error.message}`)
 

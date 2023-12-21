@@ -1,9 +1,10 @@
 "use server"
 
+import { url } from "inspector";
 import { scrapeAmazonProduct } from "../scraper";
 
 export async function scrapeAndStoreProdcut(productUrl: string) {
-    if(!productUrl) return;
+    if(!url) return;
 
     try {
       const scrapedProductrespo = await scrapeAmazonProduct(productUrl);  
