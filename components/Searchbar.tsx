@@ -24,9 +24,9 @@ const isValidProductURL = (url : string) => {
 
 const Searchbar = () => {
   const [searchPrompt, setSearchPrompt] = useState('');
-  const [isLoading, setIsloading] = useState('');  
+  const [isLoading, setIsLoading] = useState('');  
   
-  const handleSubmit = async (event: FormEvent<HTMLFormElements>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const isValidLink = isValidProductURL(searchPrompt);
 
