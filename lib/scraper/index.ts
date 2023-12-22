@@ -23,11 +23,11 @@ export async function scrapeProduct(url: string) {
     }
 
     try {
-      //Fetch the product page
+        //Fetch the product page
         const response = await axios.get(url, options);
         const $ = cheerio.load(response.data);
 
-      //Extract the product title
+        //Extract the product title
         const title = $('#productTitle').text().trim();
       
         const currentPrice = extractPrice(
