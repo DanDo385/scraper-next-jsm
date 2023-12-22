@@ -1,6 +1,8 @@
+"use server"
+
 import axios from 'axios';
 import * as cheerio from 'cheerio';
-import { extractPrice } from '../utils';
+import { extractCurrency, extractDescription, extractPrice } from '../utils';
 
 export async function scrapeProduct(url: string) {
     if(!url) return;
@@ -45,7 +47,7 @@ export async function scrapeProduct(url: string) {
         
         const outOfStock = $('#availability span').text().trim().toLowerCase() === 'currently unavailable';
 
-        const image = 
+        const images = 
             $('#imgBlkFront').attr('data-a-synamic-image') ||
             $('#landingImage').attr('data-a-dynamic-image') ||
             '{}'
