@@ -2,10 +2,10 @@ import axios from 'axios';
 import * as cheerio from 'cheerio';
 import { extractPrice } from '../utils';
 
-export async function scrapeAmazonProduct(url: string) {
+export async function scrapeProduct(url: string) {
     if(!url) return;
 
-    //Bright Data Proxy Infogacp
+    //Bright Data Proxy Info
     const username = String(process.env.BRIGHT_DATA_USERNAME);
     const password = String(process.env.BRIGHT_DATA_PASSWORD);
     const port = 22225;
@@ -43,8 +43,43 @@ export async function scrapeAmazonProduct(url: string) {
             $('.a0size-base.a-color-price')
         );
         
+        const outOfStock = $('#availability span').text().trim().toLowerCase() === 'currently unavailable';
 
-        }  catch (error:any) {
-       throw new Error(`Failed to scrape product: ${error.message}`);
+        const image = 
+            $('#imgBlkFront').attr('data-a-synamic-image') ||
+            $('#landingImage').attr('data-a-dynamic-image') ||
+            '{}'
+
+        const imageUrls = Object.keys(JSON.parse(images));
+
+        const currency = extractCurrency($('.a-price-symbol'));
+
+        const discountRate = $('.savingsPercentage').text().replace(/[-%]/g, "");
+
+        const description = extractDescription($)
+
+        // Construct data object with scraped information
+        const data = {
+            url,
+            currency: currency || '$',
+            image: imageUrls[0],
+            title,
+            currentPrice: Number(currentPrice) || Number(originalPrice),
+            originalPrice: Number(originalPrice) || Number(currentPrice),
+            priceHistory: [],
+            discountRate: Number(discountRate),
+            category: 'category',
+            reviewsCount:100,
+            stars: 4.5,
+            isOutOfStock: outOfStock,
+            description,
+            lowestPrice: Number(currentPrice) || Number(originalPrice),
+            highestPrice: Number(originalPrice) || Number(currentPrice),
+            averagePrice: Number(currentPrice) || Number(originalPrice),
+            inventory: !0
+        }
+        return data;
+    } catch (error: any) {
+      console.log(error);
     }
-}
+  }

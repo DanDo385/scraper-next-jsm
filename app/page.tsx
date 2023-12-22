@@ -29,7 +29,7 @@ const Home = async () => {
             <h1 className = "head-text">
               Unleash the Power of Web Scraping with
               <span className = "text-primary"></span>
-               Next.js, Cheerio, Puppeteer, and BrightData!
+               Next.js, MongoDB, Cheerio, Puppeteer, and BrightData!
             </h1>
 
             <p className="mt-6">
@@ -59,27 +59,3 @@ const Home = async () => {
 
 export default Home;
 
-const Searchbar = () => {
-    const handleSubmit = () => { };
-
-    const isValidProductURL = (url: string) => {
-        try {
-            const parsedURL = new URL(url);
-            const hostname = parsedURL.hostname;
-            if (hostname.includes(''))
-                return (
-                    <form className="flex flex-wrap gap-4 mt-12" onSubmit={handleSubmit}>
-                        <input
-                            type='text'
-                            placeholder='Enter Product Link'
-                            className="searchbar-input" />
-                    </form>
-                );
-        }
-
-        finally {
-        }
-
-        export default Searchbar;
-    };
-};
