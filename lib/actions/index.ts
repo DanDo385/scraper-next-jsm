@@ -11,10 +11,6 @@ import { generateEmailBody, sendEmail } from "../nodemailer";
 export async function scrapeAndStoreProduct(productUrl: string) {
   if(!productUrl) return;
 
-  let product = scrapedProduct;
-
-  const existingProduct = await Product.findOne({ url: scrapedProduct.url });
-
   try {
     connectToDB();
 
