@@ -44,7 +44,7 @@ const ProductDetails = async ({ params: { id } }: Props) => {
                 target="_blank"
                 className="text-base text-black opacity-50"
               >
-                Visit Product
+                Go Ahead, Check out the Product
               </Link>
             </div>
 
@@ -82,7 +82,7 @@ const ProductDetails = async ({ params: { id } }: Props) => {
             </div>
           </div>
 
-          <div className="product-info">
+          <div className = "product-info">
             <div className="flex flex-col gap-2">
               <p className="text-[34px] text-secondary font-bold">
                 {product.currency} {formatNumber(product.currentPrice)}
@@ -94,7 +94,7 @@ const ProductDetails = async ({ params: { id } }: Props) => {
 
             <div className="flex flex-col gap-4">
               <div className="flex gap-3">
-                <div className="product-stars">
+                <div className = "product-stars">
                   <Image 
                     src="/assets/icons/star.svg"
                     alt="star"
@@ -106,7 +106,7 @@ const ProductDetails = async ({ params: { id } }: Props) => {
                   </p>
                 </div>
 
-                <div className="product-reviews">
+                <div className = "product-reviews">
                   <Image 
                     src="/assets/icons/comment.svg"
                     alt="comment"

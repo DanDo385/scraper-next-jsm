@@ -14,7 +14,6 @@ export function extractPrice(...elements: any) {
         return firstPrice || cleanPrice;
       }
     }
-  
     return '';
   }
   
