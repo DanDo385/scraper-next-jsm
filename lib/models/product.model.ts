@@ -8,10 +8,18 @@ const productSchema = new.mongoose.Schema({
     originalPrice: { type: Number, required: true },  
     priceHistory: [
         { price: { type: Number, required: true },
-        date: {type: Date, default: Date.now} }
+        date: {type: Date, default: Date.now } }
         ],
     lowestPrice: { type: Number, required: true },
     highestPrice: { type: Number, required: true },
     averagePrice: { type: Number, required: true },
-
-})
+    discountRate: { type: Number, required: true }, 
+    description: { type: Number, required: true },
+    category: { type: Number, required: true }, 
+    reviewsCount: { type: Number, required: true },
+    isOutOfStock: { type: Boolean, required: true },
+    users: [
+        { email: { type: String, required: true } }
+    ], default: [],
+}, { timestamps: true });
+)
