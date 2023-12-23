@@ -19,6 +19,7 @@ const isValidProductURL = (url : string) => {
   } catch {
     return false;
   }
+  
   return false;
 }
 
@@ -31,7 +32,7 @@ const Searchbar = () => {
     const isValidLink = isValidProductURL(searchPrompt);
 
     if(!isValidLink) 
-      return alert('Please provide a valid link')
+      return alert('Please provide a valid link');
 
     try {
       setIsLoading(true);
@@ -66,7 +67,7 @@ const Searchbar = () => {
         {isLoading ? 'Searching...' : 'Search'}
       </button>
     </form>
-  )
+  );
 }
 
 export default Searchbar;

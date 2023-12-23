@@ -44,7 +44,7 @@ const HeroCarousel = () => {
                 className="max-xl:hidden absolute -left-[15%] bottom-0 z-0"
             />
          </div>
-    )
+    );
   }
   
   export default HeroCarousel;

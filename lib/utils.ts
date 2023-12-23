@@ -1,3 +1,5 @@
+import { PriceHistoryItem, Product } from "@/types";
+
 export function extractPrice(...elements: any) {
     for (const element of elements) {
       const priceText = element.text().trim();
