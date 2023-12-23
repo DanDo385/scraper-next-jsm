@@ -4,9 +4,19 @@ import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 
 const Modal = () => {
-  return (
+    let [isOpen, setIsOpen] = useState(true);
+
+    const openModal = () => {
+        setIsOpen(true);
+    }   
+
+    const closeModal = () => {
+        setIsOpen(false);
+    }
+  
+    return (
     <>
-        <button type = "button" className = "btn">
+        <button type = "button" className = "btn" onClick = {openModal}>
             Track
         </button>
 
